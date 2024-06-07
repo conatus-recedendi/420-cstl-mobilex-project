@@ -20,7 +20,7 @@ spec:
       containers:
         - name: server
           # TODO(user): change to your image
-          image: quay.io/ulagbulag/mobilex-exp-backend:v0.7
+          image: docker.io/1conatus/mobilex-exp-backend:v0.7
           env:
             - name: BASE_URL
               value: /api/v1
@@ -29,7 +29,7 @@ spec:
                 secretKeyRef:
                   name: openai
                   key: OPENAI_API_KEY
-                  optional: true
+                  # optional: true
           ports:
             - name: http
               protocol: TCP
@@ -38,6 +38,10 @@ spec:
             - name: huggingface-hub-token
               mountPath: /root/.cache/huggingface/token
               subPath: token
+          resources:
+            limits:
+              cpu: "2"
+              memory: "4Gi"
       volumes:
         - name: huggingface-hub-token
           secret:

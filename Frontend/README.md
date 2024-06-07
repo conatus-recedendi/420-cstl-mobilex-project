@@ -21,8 +21,8 @@ tar -czh . | docker build --tag docker.io/{my docker account name}/{my image nam
 docker push docker.io/{my docker account name}/{my image name}:{version}
 
 # Example:
-tar -czh . | docker build --tag docker.io/kerryeon/mobilex-exp-frontend:v0.1 -
-docker push docker.io/kerryeon/mobilex-exp-frontend:v0.1
+tar -czh . | docker build --platform linux/amd64 --tag docker.io/1conatus/mobilex-exp-frontend:v0.8 -
+docker push docker.io/1conatus/mobilex-exp-frontend:v0.8
 ```
 
 ### Build with buildx

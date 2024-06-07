@@ -1,3 +1,5 @@
+
+
 # Configure metadata
 ARG POETRY_VERSION="1.3.2"
 ARG PYTHON_VERSION="3.12"
@@ -30,7 +32,7 @@ FROM "docker.io/library/python:${PYTHON_VERSION}-slim-${PYTHON_DIST}" as runtime
 
 # Configure entrypoint
 ENTRYPOINT ["/usr/bin/env"]
-CMD [ "streamlit", "run", "0_Home.py" ]
+CMD [ "streamlit", "run", "0_Home.py"]
 
 # Configure runtime environment variables
 ENV PATH="/app/.venv/bin:${PATH}"

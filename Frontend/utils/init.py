@@ -17,9 +17,9 @@ def _init() -> Settings:
     # Configure page
     try:
         st.set_page_config(
-            page_title='MobileX | Experience Lab',
-            layout='wide',
-            initial_sidebar_state='auto',
+            page_title="MobileX | Experience Lab",
+            layout="wide",
+            initial_sidebar_state="auto",
         )
     except StreamlitAPIException:
         pass
@@ -30,10 +30,12 @@ def _init() -> Settings:
 
 def init_once() -> Settings:
     # Enable cache on headless mode (~production)
-    if os.environ.get('STREAMLIT_IS_PRODUCTION', 'false') == 'true':
+    if os.environ.get("STREAMLIT_IS_PRODUCTION", "false") == "true":
+
         @st.cache_resource
         def _init_once():
             return _init()
+
     else:
         _init_once = _init
 

@@ -5,7 +5,7 @@ from utils.page import PageModel
 from utils.init import init_once
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Init
     settings = init_once()
 
@@ -17,7 +17,7 @@ if __name__ == '__main__':
         settings=settings,
         input=name,
         function=name,
-        output_type='pydantic',
+        output_type="pydantic",
     )
 
     # Draw
